@@ -68,6 +68,7 @@ function get_list_field($data, $grid){
 
                 // 替换数据变量
                 $href   =   preg_replace_callback('/\[([a-z_]+)\]/', function($match) use($data){return $data[$match[1]];}, $href);
+                $show   =   preg_replace_callback('/\[([a-z_]+)\]/', function($match) use($data){return $data[$match[1]];}, $show);
 
                 $val[]  =   '<a href="'.U($href).'">'.$show.'</a>';
             }
